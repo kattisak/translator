@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>翻譯大師 PRO · 中泰翻譯</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔤</text></svg>">
-
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+Thai:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 :root{
@@ -48,3 +48,207 @@ header::before{
 }
 .hd{position:absolute;top:50%;transform:translateY(-50%);color:var(--g);font-size:.78rem;opacity:.32;letter-spacing:6px}
 .hd.l{left:10px}.hd.r{right:10px}
+.htitle{font-family:'Cormorant Garamond',serif;font-size:2.25rem;font-weight:700;color:var(--g);letter-spacing:.065em;line-height:1}
+.htitle sup{font-style:italic;font-size:.46em;color:rgba(201,168,76,.6);letter-spacing:.2em;vertical-align:super}
+.hsub{font-family:'Noto Sans Thai',sans-serif;font-size:.64rem;color:rgba(201,168,76,.44);margin-top:7px;letter-spacing:.17em;font-weight:300}
+
+/* ═══ WRAP ═══ */
+.wrap{width:100%;max-width:680px;padding:16px 12px 0;z-index:1}
+
+/* ═══ API NOTICE ═══ */
+.api-note{
+  display:none;background:rgba(168,40,32,.08);
+  border:1px solid rgba(168,40,32,.25);border-left:3px solid var(--red);
+  border-radius:var(--r);padding:11px 14px;margin-bottom:12px;
+  font-size:.74rem;color:#B83530;line-height:1.72;
+}
+.api-note.show{display:block}
+.api-note strong{display:block;font-size:.8rem;margin-bottom:2px}
+
+/* ═══ DETECT ═══ */
+.detect{
+  display:flex;align-items:center;justify-content:space-between;
+  background:var(--deep);border:1px solid rgba(197,164,96,.5);
+  border-radius:var(--r);padding:9px 15px;margin-bottom:12px;
+  box-shadow:0 2px 12px rgba(0,0,0,.18);
+}
+.det-l{display:flex;align-items:center;gap:8px;font-size:.62rem;color:rgba(201,168,76,.58);letter-spacing:.15em;font-weight:700;text-transform:uppercase}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--g);flex-shrink:0;animation:pulse 2.2s ease infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,168,76,.6)}50%{box-shadow:0 0 0 7px rgba(201,168,76,0)}}
+.det-r{font-size:.7rem;color:var(--g);font-weight:700;letter-spacing:.07em}
+
+/* ═══ DIR ROW ═══ */
+.dir-row{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:12px}
+.lbadge{font-size:.78rem;font-weight:700;letter-spacing:.1em;padding:8px 22px;border-radius:5px;min-width:92px;text-align:center;transition:all var(--ease)}
+.lbadge.zh{background:var(--deep);color:var(--g);border:1.5px solid var(--g)}
+.lbadge.th{background:var(--thai);color:#fff;border:1.5px solid var(--thai2)}
+.swap{
+  width:42px;height:42px;border-radius:50%;
+  background:var(--gs);border:1.5px solid var(--bd);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;color:var(--g);font-size:1.2rem;
+  transition:all .38s cubic-bezier(.4,1.55,.6,1);flex-shrink:0;
+  box-shadow:0 2px 8px rgba(0,0,0,.12);
+}
+.swap:hover{background:var(--g);color:var(--deep);transform:rotate(180deg)}
+.swap:active{transform:rotate(180deg) scale(.9)}
+
+/* ═══ PANELS ═══ */
+.panels{border:1.5px solid var(--bd);border-radius:var(--r);overflow:hidden;box-shadow:0 14px 60px var(--sh),0 3px 12px var(--shs)}
+.ph{display:flex;align-items:center;justify-content:space-between;padding:8px 14px 7px;border-bottom:1px solid var(--bds)}
+.ph.src{background:var(--deep)}.ph.tgt{background:var(--thai)}
+.pl{display:flex;align-items:center;gap:7px;font-size:.63rem;font-weight:700;letter-spacing:.19em;text-transform:uppercase}
+.ph.src .pl{color:var(--g)}.ph.tgt .pl{color:#fff}
+.pdot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.ph.src .pdot{background:var(--g)}.ph.tgt .pdot{background:#7BC4FF}
+.ph-acts{display:flex;gap:5px;align-items:center}
+.cc{font-size:.58rem;opacity:.55;font-variant-numeric:tabular-nums}
+.ph.src .cc{color:var(--g)}.ph.tgt .cc{color:#fff}
+.ph-btn{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  border-radius:4px;padding:3px 10px;font-size:.56rem;
+  cursor:pointer;font-family:'Noto Serif TC',serif;letter-spacing:.05em;
+  transition:all var(--ease);color:rgba(255,255,255,.6);
+}
+.ph-btn:hover{background:rgba(255,255,255,.14);color:#fff}
+.ph-btn:active{transform:scale(.95)}
+.ph.src .ph-btn{color:rgba(201,168,76,.6);border-color:rgba(201,168,76,.16)}
+.ph.src .ph-btn:hover{color:var(--g);background:var(--glo)}
+
+textarea{
+  width:100%;min-height:128px;background:var(--panel);
+  border:none;outline:none;resize:none;
+  font-size:1.07rem;line-height:2;color:var(--ink);
+  padding:15px;font-family:'Noto Serif TC','Noto Sans Thai',serif;
+  caret-color:var(--g);transition:background var(--ease);
+}
+textarea:focus{background:#FDFBF2}
+textarea::placeholder{color:#C2A86A;font-style:italic;font-size:.95rem}
+
+< truncated lines 128-403 >
+function stripBrackets(t){return t.replace(/[（(][^）)]{0,60}[）)]/g,'').replace(/\s+/g,' ').trim()}
+
+function startTTS(){
+  if(!thaiText){showToast('請先完成翻譯');return}
+  if(playing){stopTTS();return}
+  const clean=stripBrackets(thaiText);
+  if(!clean){showToast('沒有泰文可播放');return}
+  playing=true;
+  playBtn.classList.add('on');pIco.textContent='⏹';
+  pLabel.textContent='播放中 · กำลังเล่น';
+  pSub.textContent=`語速：${spkRate<=0.6?'慢速':spkRate>=1.1?'快速':'正常'} · 點擊停止`;
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(clean);
+  u.lang='th-TH';u.rate=spkRate;u.pitch=1.05;u.volume=1;
+  const v=getThaiVoice();if(v)u.voice=v;
+  u.onend=()=>{stopTTS();if(looping)loopTimer=setTimeout(startTTS,1200)};
+  u.onerror=()=>stopTTS();
+  speechSynthesis.speak(u);
+}
+function stopTTS(){playing=false;speechSynthesis.cancel();clearTimeout(loopTimer);playBtn.classList.remove('on');pIco.textContent='🔊';pLabel.textContent='聆聽泰文發音';pSub.textContent='點擊播放 · กดเพื่อฟัง'}
+
+playBtn.addEventListener('click',startTTS);
+repBtn.addEventListener('click',()=>{looping=!looping;repBtn.classList.toggle('on',looping);showToast(looping?'🔁 循環播放已開啟':'循環播放已關閉');if(!looping)clearTimeout(loopTimer)});
+document.querySelectorAll('.sb').forEach(b=>{b.addEventListener('click',()=>{document.querySelectorAll('.sb').forEach(x=>x.classList.remove('on'));b.classList.add('on');spkRate=parseFloat(b.dataset.r);showToast('語速：'+b.textContent);if(playing){stopTTS();setTimeout(startTTS,80)}})});
+
+// ══ LABELS ══
+function setLabels(){
+  const zh=dir==='zh-th';
+  G('srcLbl').textContent=zh?'中文':'ภาษาไทย';G('srcLbl').className='lbadge '+(zh?'zh':'th');
+  G('tgtLbl').textContent=zh?'ภาษาไทย':'中文';G('tgtLbl').className='lbadge '+(zh?'th':'zh');
+  G('inLang').textContent=zh?'輸入中文':'ป้อนภาษาไทย';
+  G('outLang').textContent=zh?'ผลการแปลภาษาไทย':'翻譯結果（中文）';
+  inp.placeholder=zh?'請輸入中文… Ctrl+Enter 快速翻譯':'พิมพ์ภาษาไทย… Ctrl+Enter แปล';
+  renderPhrases();
+}
+
+// ══ DETECT ══
+function detectLang(t){const th=(t.match(/[\u0E00-\u0E7F]/g)||[]).length,zh=(t.match(/[\u4E00-\u9FFF\u3400-\u4DBF]/g)||[]).length;if(th>0&&th>zh)return'th-zh';if(zh>0&&zh>=th)return'zh-th';return dir}
+function updateDetect(t){if(!t.trim()){G('detLbl').textContent='等待輸入…';return}const d=detectLang(t);G('detLbl').textContent=d==='zh-th'?'偵測到：中文 → 泰文':'ตรวจพบ：ภาษาไทย → 中文';if(d!==dir){dir=d;setLabels()}}
+
+// ══ EVENTS ══
+inp.addEventListener('input',()=>{inCC.textContent=inp.value.length+' 字';clearTimeout(detTimer);detTimer=setTimeout(()=>updateDetect(inp.value),350)});
+inp.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){e.preventDefault();doTranslate()}});
+G('swapBtn').addEventListener('click',()=>{if(busy)return;stopTTS();const prev=out.innerText.trim();dir=dir==='zh-th'?'th-zh':'zh-th';setLabels();const ok=prev&&!prev.includes('翻譯結果將顯示')&&!prev.includes('ผลจะแสดง');if(ok){inp.value=prev;inCC.textContent=prev.length+' 字'}resetOut();updateDetect(inp.value)});
+G('pasteBtn').addEventListener('click',async()=>{try{const t=await navigator.clipboard.readText();if(t){inp.value=t;inCC.textContent=t.length+' 字';updateDetect(t)}}catch{showToast('請手動長按貼上')}});
+G('clrInBtn').addEventListener('click',()=>{inp.value='';inCC.textContent='0 字';G('detLbl').textContent='等待輸入…';inp.focus()});
+G('clrBtn').addEventListener('click',()=>{if(busy)return;stopTTS();inp.value='';inCC.textContent='0 字';G('detLbl').textContent='等待輸入…';resetOut();inp.focus()});
+function doCopy(){const t=out.innerText.trim();if(!t||t.includes('翻譯結果將顯示'))return;navigator.clipboard.writeText(t).then(()=>{const b=G('cpyBtn');b.classList.add('ok');b.querySelector('.lb').textContent='✓';setTimeout(()=>{b.classList.remove('ok');b.querySelector('.lb').textContent='複製'},2200);showToast('✓ 已複製')}).catch(()=>showToast('請手動長按複製'))}
+G('cpyBtn').addEventListener('click',doCopy);G('cpyOutBtn').addEventListener('click',doCopy);
+G('shrBtn').addEventListener('click',async()=>{const t=out.innerText.trim();if(!t||t.includes('翻譯結果將顯示'))return;const txt=`【翻譯大師PRO】\n原文：${inp.value.trim()}\n翻譯：${t}${pronText?'\n發音：'+pronText:''}`;if(navigator.share)try{await navigator.share({text:txt})}catch{}else{await navigator.clipboard.writeText(txt).catch(()=>{});showToast('✓ 已複製可分享')}});
+transBtn.addEventListener('click',doTranslate);
+G('clrHist').addEventListener('click',async()=>{await dbClr();renderHist([]);showToast('記錄已清除')});
+
+// ══ TRANSLATE ══
+async function doTranslate(srcOverride){
+  const src=(srcOverride||inp.value).trim();
+  if(!src||busy){if(!src){inp.focus();showToast('請輸入文字')}return}
+  busy=true;stopTTS();apiNote.classList.remove('show');
+  transBtn.disabled=true;transBtn.innerHTML='<span><span class="spin"></span>翻譯中…</span>';
+  out.innerHTML='<span class="ph-out">翻譯中，請稍候…</span>';
+  pronun.style.display='none';speakPanel.classList.remove('show');
+  outCC.textContent='';thaiText='';pronText='';
+  const isZhTh=dir==='zh-th';
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'content-type':'application/json','anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:512,system:isZhTh?SYS_ZH:SYS_TH,messages:[{role:'user',content:src}]})
+    });
+    if(!res.ok){const e=await res.json().catch(()=>({}));const msg=e?.error?.message||'';if(res.status===429||res.status===529||msg.includes('exceeded')){apiNote.classList.add('show');throw new Error('API 用量達上限，請稍後再試')}throw new Error(msg||`HTTP ${res.status}`)}
+    const data=await res.json();
+    const raw=(data.content||[]).map(b=>b.text||'').join('').trim();
+    if(!raw)throw new Error('翻譯結果為空，請再試一次');
+    await renderResult(raw,isZhTh,src);
+  }catch(e){out.innerHTML=`<span class="err-msg">⚠ ${e.message}</span>`}
+  finally{busy=false;transBtn.disabled=false;transBtn.innerHTML='<span>✦ 立即翻譯</span>'}
+}
+
+// ══ RENDER ══
+async function renderResult(raw,isZhTh,src){
+  const lines=raw.split('\n').map(l=>l.trim()).filter(Boolean);
+  let main='',pron='';
+  for(const l of lines){if(l.startsWith('📢'))pron=l.replace('📢','').trim();else if(!main)main=l}
+  if(!main)main=raw;
+  out.textContent=main;outCC.textContent=main.length+' 字';
+  if(pron){pronun.textContent='📢 '+pron;pronun.style.display='block';pronText=pron}
+  if(isZhTh){thaiText=main;speakPanel.classList.add('show')}
+  else{thaiText='';speakPanel.classList.remove('show')}
+  if(db){await dbAdd({src,tgt:main,pron,dir:isZhTh?'中→泰':'泰→中',ts:Date.now()});renderHist(await dbAll())}
+  showToast('✓ 翻譯完成');
+}
+
+// ══ PHRASES ══
+function renderPhrases(){
+  const bar=G('suggBar'),list=PHRASES[dir]||[];
+  bar.innerHTML=list.map(s=>`<button class="sugg">${s}</button>`).join('');
+  bar.querySelectorAll('.sugg').forEach(b=>{b.addEventListener('click',()=>{if(busy)return;inp.value=b.textContent;inCC.textContent=inp.value.length+' 字';updateDetect(inp.value);doTranslate(b.textContent)})});
+}
+
+// ══ HISTORY ══
+function fmtDate(ts){const d=new Date(ts),now=new Date(),df=now-d;if(df<60e3)return'剛剛';if(df<3600e3)return Math.floor(df/60e3)+'分鐘前';if(df<86400e3)return Math.floor(df/3600e3)+'小時前';if(df<604800e3)return Math.floor(df/86400e3)+'天前';return`${d.getMonth()+1}/${d.getDate()} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`}
+
+function renderHist(items){
+  const sec=G('histSec'),list=G('histList');
+  if(!items?.length){sec.style.display='none';return}
+  sec.style.display='block';G('histMeta').textContent=`共 ${items.length} 筆 · 永久保存`;
+  list.innerHTML=items.map(h=>`<div class="hi" data-id="${h.id}"><div class="hi-top"><span class="hd2">✦ ${esc(h.dir)}</span><div class="hi-right"><span class="h-date">${fmtDate(h.ts)}</span><button class="hi-del" data-id="${h.id}">✕</button></div></div><div class="hi-src">${esc(h.src)}</div><div class="hi-tgt">${esc(h.tgt)}</div></div>`).join('');
+  list.querySelectorAll('.hi').forEach(el=>{el.addEventListener('click',e=>{if(e.target.classList.contains('hi-del'))return;const h=items.find(x=>x.id===+el.dataset.id);if(!h)return;stopTTS();inp.value=h.src;inCC.textContent=h.src.length+' 字';out.textContent=h.tgt;outCC.textContent=h.tgt.length+' 字';if(h.pron){pronun.textContent='📢 '+h.pron;pronun.style.display='block';pronText=h.pron}else{pronun.style.display='none';pronText=''}if(h.dir==='中→泰'){thaiText=h.tgt;speakPanel.classList.add('show')}else{thaiText='';speakPanel.classList.remove('show')}updateDetect(h.src);window.scrollTo({top:0,behavior:'smooth'})})});
+  list.querySelectorAll('.hi-del').forEach(b=>{b.addEventListener('click',async e=>{e.stopPropagation();await dbDel(+b.dataset.id);renderHist(await dbAll());showToast('已刪除此筆')})});
+}
+
+// ══ HELPERS ══
+function resetOut(){out.innerHTML='<span class="ph-out">翻譯結果將顯示於此 · ผลจะแสดงที่นี่</span>';pronun.style.display='none';speakPanel.classList.remove('show');outCC.textContent='';thaiText='';pronText=''}
+let toastT=null;
+function showToast(msg){const t=G('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),2500)}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+
+// ══ INIT ══
+async function init(){
+  try{await openDB();renderHist(await dbAll())}catch(e){console.warn('IndexedDB unavailable',e)}
+  setLabels();
+}
+init();
+</script>
+</body>
+</html>
