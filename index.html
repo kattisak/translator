@@ -3,251 +3,262 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>翻譯大師 PRO · 中泰翻譯</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔤</text></svg>">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+Thai:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+<title>翻譯大師 PRO</title>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-:root{
-  --g:#C9A84C;--glo:rgba(201,168,76,0.13);--gs:rgba(201,168,76,0.07);
-  --deep:#090601;--deep2:#130F05;--ink:#1A1005;--soft:#3C2E10;
-  --cream:#F5EDD8;--panel:#FAF4E4;--panel2:#F2EAD0;
-  --red:#A82820;--thai:#122548;--thai2:#1A3468;
-  --bd:#C5A460;--bds:rgba(197,164,96,0.28);
-  --sh:rgba(9,6,1,0.28);--shs:rgba(9,6,1,0.06);
-  --ok:#1A6035;--r:10px;
-  --ease:.18s cubic-bezier(.4,0,.2,1);
-}
-html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  font-family:'Noto Serif TC',serif;
-  background:var(--cream);
-  min-height:100vh;
-  display:flex;flex-direction:column;align-items:center;
-  padding-bottom:100px;overflow-x:hidden;
-}
-body::before{
-  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
-  background:
-    radial-gradient(ellipse 90% 55% at -5% -5%,rgba(201,168,76,.10) 0%,transparent 60%),
-    radial-gradient(ellipse 70% 55% at 105% 105%,rgba(18,37,72,.09) 0%,transparent 60%);
-}
-
-/* ═══ HEADER ═══ */
-header{
-  width:100%;
-  background:linear-gradient(175deg,#050302 0%,var(--deep) 40%,var(--deep2) 100%);
-  padding:22px 58px 17px;text-align:center;
-  border-bottom:2px solid var(--g);
-  position:relative;z-index:20;
-  box-shadow:0 8px 48px rgba(0,0,0,.55);overflow:hidden;
-}
-header::before{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background:repeating-linear-gradient(90deg,rgba(201,168,76,.022) 0,rgba(201,168,76,.022) 1px,transparent 1px,transparent 48px);
-}
-.hd{position:absolute;top:50%;transform:translateY(-50%);color:var(--g);font-size:.78rem;opacity:.32;letter-spacing:6px}
-.hd.l{left:10px}.hd.r{right:10px}
-.htitle{font-family:'Cormorant Garamond',serif;font-size:2.25rem;font-weight:700;color:var(--g);letter-spacing:.065em;line-height:1}
-.htitle sup{font-style:italic;font-size:.46em;color:rgba(201,168,76,.6);letter-spacing:.2em;vertical-align:super}
-.hsub{font-family:'Noto Sans Thai',sans-serif;font-size:.64rem;color:rgba(201,168,76,.44);margin-top:7px;letter-spacing:.17em;font-weight:300}
-
-/* ═══ WRAP ═══ */
-.wrap{width:100%;max-width:680px;padding:16px 12px 0;z-index:1}
-
-/* ═══ API NOTICE ═══ */
-.api-note{
-  display:none;background:rgba(168,40,32,.08);
-  border:1px solid rgba(168,40,32,.25);border-left:3px solid var(--red);
-  border-radius:var(--r);padding:11px 14px;margin-bottom:12px;
-  font-size:.74rem;color:#B83530;line-height:1.72;
-}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{--g:#C9A84C;--deep:#0A0701;--ink:#1A1005;--cream:#F5EDD8;--panel:#FAF4E4;--panel2:#F0E8D0;--red:#A82820;--thai:#122548;--bd:#C5A460;--bds:rgba(197,164,96,.28);--r:10px}
+html{font-size:16px}
+body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;background:var(--cream);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding-bottom:80px}
+header{width:100%;background:linear-gradient(180deg,#060401,var(--deep));padding:18px 20px 14px;text-align:center;border-bottom:2px solid var(--g);box-shadow:0 6px 30px rgba(0,0,0,.5)}
+.htitle{font-size:1.9rem;font-weight:700;color:var(--g);letter-spacing:.05em;line-height:1}
+.htitle sup{font-size:.45em;color:rgba(201,168,76,.65);letter-spacing:.15em;vertical-align:super;font-style:italic}
+.hsub{font-size:.62rem;color:rgba(201,168,76,.45);margin-top:5px;letter-spacing:.14em}
+.wrap{width:100%;max-width:660px;padding:14px 12px 0}
+.api-note{display:none;background:rgba(168,40,32,.08);border:1px solid rgba(168,40,32,.25);border-left:3px solid var(--red);border-radius:var(--r);padding:10px 14px;margin-bottom:11px;font-size:.74rem;color:#B83530;line-height:1.7}
 .api-note.show{display:block}
-.api-note strong{display:block;font-size:.8rem;margin-bottom:2px}
-
-/* ═══ DETECT ═══ */
-.detect{
-  display:flex;align-items:center;justify-content:space-between;
-  background:var(--deep);border:1px solid rgba(197,164,96,.5);
-  border-radius:var(--r);padding:9px 15px;margin-bottom:12px;
-  box-shadow:0 2px 12px rgba(0,0,0,.18);
-}
-.det-l{display:flex;align-items:center;gap:8px;font-size:.62rem;color:rgba(201,168,76,.58);letter-spacing:.15em;font-weight:700;text-transform:uppercase}
-.pulse{width:7px;height:7px;border-radius:50%;background:var(--g);flex-shrink:0;animation:pulse 2.2s ease infinite}
+.api-note strong{display:block;font-size:.79rem;margin-bottom:2px}
+.detect{display:flex;align-items:center;justify-content:space-between;background:var(--deep);border:1px solid rgba(197,164,96,.45);border-radius:var(--r);padding:8px 14px;margin-bottom:11px}
+.det-l{display:flex;align-items:center;gap:7px;font-size:.61rem;color:rgba(201,168,76,.55);letter-spacing:.14em;font-weight:700;text-transform:uppercase}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--g);flex-shrink:0;animation:pulse 2s ease infinite}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,168,76,.6)}50%{box-shadow:0 0 0 7px rgba(201,168,76,0)}}
-.det-r{font-size:.7rem;color:var(--g);font-weight:700;letter-spacing:.07em}
-
-/* ═══ DIR ROW ═══ */
-.dir-row{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:12px}
-.lbadge{font-size:.78rem;font-weight:700;letter-spacing:.1em;padding:8px 22px;border-radius:5px;min-width:92px;text-align:center;transition:all var(--ease)}
+.det-r{font-size:.7rem;color:var(--g);font-weight:700}
+.dir-row{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:11px}
+.lbadge{font-size:.78rem;font-weight:700;letter-spacing:.1em;padding:7px 20px;border-radius:5px;min-width:88px;text-align:center}
 .lbadge.zh{background:var(--deep);color:var(--g);border:1.5px solid var(--g)}
-.lbadge.th{background:var(--thai);color:#fff;border:1.5px solid var(--thai2)}
-.swap{
-  width:42px;height:42px;border-radius:50%;
-  background:var(--gs);border:1.5px solid var(--bd);
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;color:var(--g);font-size:1.2rem;
-  transition:all .38s cubic-bezier(.4,1.55,.6,1);flex-shrink:0;
-  box-shadow:0 2px 8px rgba(0,0,0,.12);
-}
-.swap:hover{background:var(--g);color:var(--deep);transform:rotate(180deg)}
+.lbadge.th{background:var(--thai);color:#fff;border:1.5px solid #1A3468}
+.swap{width:40px;height:40px;border-radius:50%;background:rgba(201,168,76,.07);border:1.5px solid var(--bd);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--g);font-size:1.15rem;flex-shrink:0;transition:all .3s}
 .swap:active{transform:rotate(180deg) scale(.9)}
-
-/* ═══ PANELS ═══ */
-.panels{border:1.5px solid var(--bd);border-radius:var(--r);overflow:hidden;box-shadow:0 14px 60px var(--sh),0 3px 12px var(--shs)}
-.ph{display:flex;align-items:center;justify-content:space-between;padding:8px 14px 7px;border-bottom:1px solid var(--bds)}
+.panels{border:1.5px solid var(--bd);border-radius:var(--r);overflow:hidden;box-shadow:0 10px 40px rgba(10,7,1,.25)}
+.ph{display:flex;align-items:center;justify-content:space-between;padding:8px 13px 7px;border-bottom:1px solid var(--bds)}
 .ph.src{background:var(--deep)}.ph.tgt{background:var(--thai)}
-.pl{display:flex;align-items:center;gap:7px;font-size:.63rem;font-weight:700;letter-spacing:.19em;text-transform:uppercase}
+.pl{display:flex;align-items:center;gap:6px;font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
 .ph.src .pl{color:var(--g)}.ph.tgt .pl{color:#fff}
 .pdot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
 .ph.src .pdot{background:var(--g)}.ph.tgt .pdot{background:#7BC4FF}
 .ph-acts{display:flex;gap:5px;align-items:center}
-.cc{font-size:.58rem;opacity:.55;font-variant-numeric:tabular-nums}
+.cc{font-size:.58rem;opacity:.55}
 .ph.src .cc{color:var(--g)}.ph.tgt .cc{color:#fff}
-.ph-btn{
-  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
-  border-radius:4px;padding:3px 10px;font-size:.56rem;
-  cursor:pointer;font-family:'Noto Serif TC',serif;letter-spacing:.05em;
-  transition:all var(--ease);color:rgba(255,255,255,.6);
-}
-.ph-btn:hover{background:rgba(255,255,255,.14);color:#fff}
-.ph-btn:active{transform:scale(.95)}
-.ph.src .ph-btn{color:rgba(201,168,76,.6);border-color:rgba(201,168,76,.16)}
-.ph.src .ph-btn:hover{color:var(--g);background:var(--glo)}
+.ph-btn{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:3px 9px;font-size:.56rem;cursor:pointer;color:rgba(255,255,255,.6)}
+.ph-btn:active{opacity:.7}
+.ph.src .ph-btn{color:rgba(201,168,76,.65);border-color:rgba(201,168,76,.18)}
+textarea{width:100%;min-height:118px;background:var(--panel);border:none;outline:none;resize:none;font-size:1.05rem;line-height:1.95;color:var(--ink);padding:14px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;caret-color:var(--g)}
+textarea::placeholder{color:#C2A86A;font-style:italic}
+.out-wrap{background:var(--panel)}
+.out{padding:14px;min-height:118px;font-size:1.05rem;line-height:1.95;color:var(--ink);white-space:pre-wrap;word-break:break-word;user-select:text;-webkit-user-select:text}
+.ph-out{color:#C2A86A;font-style:italic;font-size:.9rem}
+.err-msg{color:var(--red);font-size:.85rem;line-height:1.7}
+.pronun{display:none;padding:8px 14px 12px;font-size:.78rem;color:#7A6228;font-style:italic;border-top:1px dashed var(--bds);background:var(--panel2);line-height:1.7}
+.speak-panel{display:none;background:linear-gradient(135deg,#0D1E3E,#071228);border-top:2px solid rgba(123,196,255,.2);padding:13px 14px;gap:10px;align-items:center}
+.speak-panel.show{display:flex}
+.play-btn{flex:1;display:flex;align-items:center;gap:11px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.2);border-radius:var(--r);padding:11px 15px;cursor:pointer}
+.play-btn.on{background:rgba(123,196,255,.12);border-color:rgba(123,196,255,.5)}
+.play-btn:active{opacity:.8}
+.p-ico{font-size:1.5rem;line-height:1;flex-shrink:0}
+.p-info{display:flex;flex-direction:column;gap:2px}
+.p-label{font-size:.74rem;font-weight:700;color:#fff;letter-spacing:.1em}
+.p-sub{font-size:.58rem;color:rgba(255,255,255,.5)}
+.spd-col{display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0}
+.spd-title{font-size:.5rem;color:rgba(255,255,255,.38);letter-spacing:.12em;text-transform:uppercase}
+.spd-btns{display:flex;gap:3px}
+.sb{width:31px;height:26px;border-radius:4px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.04);color:rgba(255,255,255,.58);font-size:.58rem;font-weight:700;cursor:pointer}
+.sb.on{background:var(--g);border-color:var(--g);color:var(--deep)}
+.rep{width:38px;height:38px;border-radius:50%;flex-shrink:0;border:1.5px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);color:rgba(255,255,255,.58);font-size:.88rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.rep.on{background:rgba(201,168,76,.18);border-color:var(--g);color:var(--g)}
+.divider{height:2px;background:linear-gradient(90deg,transparent,var(--g) 30%,var(--thai) 70%,transparent);opacity:.45}
+.sugg-wrap{margin-top:10px}
+.sugg-hd{display:flex;align-items:center;gap:8px;font-size:.58rem;color:#A08050;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:7px}
+.sugg-hd::after{content:'';flex:1;height:1px;background:var(--bds)}
+.sugg-bar{display:flex;gap:6px;flex-wrap:wrap}
+.sugg{background:var(--panel);border:1px solid var(--bds);border-radius:20px;padding:5px 13px;font-size:.69rem;color:#3C2E10;cursor:pointer}
+.sugg:active{opacity:.7}
+.act-row{display:flex;gap:8px;margin-top:11px}
+.tbtn{flex:1;background:linear-gradient(135deg,var(--deep),#1C1204);color:var(--g);border:1.5px solid var(--g);border-radius:var(--r);font-size:1rem;font-weight:700;letter-spacing:.14em;padding:14px 16px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+.tbtn:active{opacity:.85}
+.tbtn:disabled{opacity:.58;pointer-events:none}
+.ibtn{background:var(--panel);border:1.5px solid var(--bd);border-radius:var(--r);padding:0 12px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-width:50px}
+.ibtn .ic{font-size:1.1rem;line-height:1;color:#3C2E10}
+.ibtn .lb{font-size:.52rem;color:#3C2E10;letter-spacing:.1em}
+.ibtn:active{opacity:.7}
+.ibtn.ok .ic,.ibtn.ok .lb{color:#1A6035}
+.ibtn.ok{border-color:#1A6035}
+.spin{display:inline-block;width:13px;height:13px;border:2.5px solid rgba(201,168,76,.2);border-top-color:var(--g);border-radius:50%;animation:sp .55s linear infinite;vertical-align:middle;margin-right:7px}
+@keyframes sp{to{transform:rotate(360deg)}}
+.hist-wrap{margin-top:20px}
+.hist-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px}
+.hist-title{font-size:.61rem;font-weight:700;letter-spacing:.2em;color:#907840;text-transform:uppercase}
+.hist-meta{font-size:.56rem;color:#B8A070;margin-top:2px}
+.hist-clr{font-size:.58rem;color:#B8A070;background:none;border:1px solid var(--bds);border-radius:4px;cursor:pointer;padding:3px 8px}
+.hi{background:var(--panel);border:1px solid var(--bds);border-left:3px solid var(--g);border-radius:6px;padding:10px 13px;margin-bottom:7px;cursor:pointer}
+.hi-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:3px}
+.hd2{font-size:.58rem;color:#B8A070;letter-spacing:.1em}
+.hi-right{display:flex;align-items:center;gap:8px}
+.h-date{font-size:.55rem;color:#D0B880}
+.hi-del{background:none;border:none;color:rgba(208,184,128,.5);cursor:pointer;font-size:.68rem;padding:0 2px}
+.hi-src{color:#7A6030;font-size:.76rem;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hi-tgt{color:var(--ink);font-size:.87rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500}
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--deep);border:1px solid rgba(201,168,76,.55);color:var(--g);font-size:.71rem;padding:9px 22px;border-radius:30px;letter-spacing:.1em;opacity:0;transition:all .28s;z-index:999;white-space:nowrap;pointer-events:none;box-shadow:0 4px 20px rgba(0,0,0,.4)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.foot{margin-top:40px;text-align:center;padding:0 12px}
+.fo{color:var(--g);font-size:.78rem;letter-spacing:.42em;opacity:.25}
+.ft{font-size:.56rem;color:#B8A070;margin-top:6px;letter-spacing:.07em;line-height:1.7}
+</style>
+</head>
+<body>
+<header>
+  <div class="htitle">翻譯大師 <sup>PRO</sup></div>
+  <div class="hsub">ผู้เชี่ยวชาญการแปล · Chinese ↔ Thai · 男生語氣</div>
+</header>
+<div class="wrap">
+  <div class="api-note" id="apiNote"><strong>⏳ API 用量暫時達到上限</strong>Anthropic 5 小時速率限制已滿，請稍後再試。</div>
+  <div class="detect">
+    <div class="det-l"><div class="pulse"></div><span>自動偵測語言</span></div>
+    <div class="det-r" id="detLbl">等待輸入…</div>
+  </div>
+  <div class="dir-row">
+    <span class="lbadge zh" id="srcLbl">中文</span>
+    <button class="swap" id="swapBtn">⇄</button>
+    <span class="lbadge th" id="tgtLbl">ภาษาไทย</span>
+  </div>
+  <div class="panels">
+    <div class="ph src">
+      <div class="pl"><span class="pdot"></span><span id="inLang">輸入中文</span></div>
+      <div class="ph-acts">
+        <span class="cc" id="inCC">0字</span>
+        <button class="ph-btn" id="pasteBtn">貼上</button>
+        <button class="ph-btn" id="clrInBtn">清除</button>
+      </div>
+    </div>
+    <textarea id="inp" rows="5" placeholder="請輸入中文…" spellcheck="false"></textarea>
+    <div class="divider"></div>
+    <div class="ph tgt">
+      <div class="pl"><span class="pdot"></span><span id="outLang">翻譯結果</span></div>
+      <div class="ph-acts">
+        <span class="cc" id="outCC"></span>
+        <button class="ph-btn" id="cpyOutBtn" style="color:rgba(255,255,255,.65);border-color:rgba(255,255,255,.14)">複製</button>
+      </div>
+    </div>
+    <div class="out-wrap">
+      <div class="out" id="out"><span class="ph-out">翻譯結果將顯示於此 · ผลจะแสดงที่นี่</span></div>
+      <div class="pronun" id="pronun"></div>
+      <div class="speak-panel" id="speakPanel">
+        <button class="play-btn" id="playBtn">
+          <span class="p-ico" id="pIco">🔊</span>
+          <div class="p-info">
+            <span class="p-label" id="pLabel">聆聽泰文發音</span>
+            <span class="p-sub" id="pSub">點擊播放 · กดเพื่อฟัง</span>
+          </div>
+        </button>
+        <div class="spd-col">
+          <span class="spd-title">語速</span>
+          <div class="spd-btns">
+            <button class="sb" data-r="0.58">慢</button>
+            <button class="sb on" data-r="0.85">正常</button>
+            <button class="sb" data-r="1.15">快</button>
+          </div>
+        </div>
+        <button class="rep" id="repBtn">🔁</button>
+      </div>
+    </div>
+  </div>
+  <div class="sugg-wrap">
+    <div class="sugg-hd">常用短句</div>
+    <div class="sugg-bar" id="suggBar"></div>
+  </div>
+  <div class="act-row">
+    <button class="tbtn" id="transBtn">✦ 立即翻譯</button>
+    <button class="ibtn" id="cpyBtn"><span class="ic">⎘</span><span class="lb">複製</span></button>
+    <button class="ibtn" id="shrBtn"><span class="ic">↗</span><span class="lb">分享</span></button>
+    <button class="ibtn" id="clrBtn"><span class="ic">✕</span><span class="lb">清除</span></button>
+  </div>
+  <div class="hist-wrap" id="histSec" style="display:none">
+    <div class="hist-head">
+      <div><div class="hist-title">✦ 翻譯記錄</div><div class="hist-meta" id="histMeta"></div></div>
+      <button class="hist-clr" id="clrHist">清除全部</button>
+    </div>
+    <div id="histList"></div>
+  </div>
+</div>
+<div class="foot"><div class="fo">❖ ❖ ❖</div><div class="ft">記錄永久保存 · 男生語氣 ครับ · 🔊 學泰語發音</div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DB='TranPRO10',STORE='hist';let db=null;
+function openDB(){return new Promise((r,f)=>{const q=indexedDB.open(DB,1);q.onupgradeneeded=e=>{const d=e.target.result;if(!d.objectStoreNames.contains(STORE))d.createObjectStore(STORE,{keyPath:'id',autoIncrement:true}).createIndex('ts','ts',{unique:false})};q.onsuccess=e=>{db=e.target.result;r(db)};q.onerror=()=>f(q.error)})}
+const txs=(m='readonly')=>db.transaction(STORE,m).objectStore(STORE);
+const dbAdd=o=>new Promise((ok,f)=>{const r=txs('readwrite').add(o);r.onsuccess=()=>ok(r.result);r.onerror=()=>f(r.error)});
+const dbAll=()=>new Promise((ok,f)=>{const r=txs().index('ts').getAll();r.onsuccess=()=>ok(r.result.reverse());r.onerror=()=>f(r.error)});
+const dbDel=id=>new Promise((ok,f)=>{const r=txs('readwrite').delete(id);r.onsuccess=ok;r.onerror=()=>f(r.error)});
+const dbClr=()=>new Promise((ok,f)=>{const r=txs('readwrite').clear();r.onsuccess=ok;r.onerror=()=>f(r.error)});
 
-textarea{
-  width:100%;min-height:128px;background:var(--panel);
-  border:none;outline:none;resize:none;
-  font-size:1.07rem;line-height:2;color:var(--ink);
-  padding:15px;font-family:'Noto Serif TC','Noto Sans Thai',serif;
-  caret-color:var(--g);transition:background var(--ease);
-}
-textarea:focus{background:#FDFBF2}
-textarea::placeholder{color:#C2A86A;font-style:italic;font-size:.95rem}
+let dir='zh-th',busy=false,detTimer=null,spkRate=0.85,looping=false,playing=false,loopTimer=null,thaiText='',pronText='';
+const PHRASES={'zh-th':['你好','謝謝','多少錢？','在哪裡？','我愛你','好吃！','我不懂','幫幫我','沒關係','對不起'],'th-zh':['สวัสดี','ขอบคุณ','เท่าไหร่？','อยู่ที่ไหน？','ฉันรักคุณ','อร่อยมาก！','ไม่เป็นไร','ขอโทษ','ไม่เข้าใจ','ช่วยด้วย']};
+const SYS_ZH=`你是世界頂尖中泰翻譯師，以男性視角翻譯，使用地道泰語男性語氣（句尾ครับ）。\n輸出格式（只輸出兩行）：\n第1行：泰文翻譯（中文原文）\n第2行：📢 泰語發音（中文音節）\n規則：括號內填完整中文原文，不加任何前言後語。`;
+const SYS_TH=`你是世界頂尖泰中翻譯師，將泰文精準翻譯成自然中文。\n輸出格式（只輸出兩行）：\n第1行：中文翻譯\n第2行：📢 漢語拼音（帶聲調）\n規則：不加任何前言後語。`;
+const G=id=>document.getElementById(id);
+const inp=G('inp'),out=G('out'),transBtn=G('transBtn');
+const inCC=G('inCC'),outCC=G('outCC'),pronun=G('pronun'),speakPanel=G('speakPanel');
+const playBtn=G('playBtn'),pIco=G('pIco'),pLabel=G('pLabel'),pSub=G('pSub');
+const repBtn=G('repBtn'),apiNote=G('apiNote');
 
-< truncated lines 128-403 >
+if(speechSynthesis.onvoiceschanged!==undefined)speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices();
+setTimeout(()=>speechSynthesis.getVoices(),500);
+function getThaiVoice(){const vs=speechSynthesis.getVoices();return vs.find(v=>v.lang==='th-TH'&&/Kanya|Narisa/i.test(v.name))||vs.find(v=>v.lang==='th-TH'&&!/google/i.test(v.name))||vs.find(v=>v.lang==='th-TH')||vs.find(v=>v.lang.startsWith('th'))||null}
 function stripBrackets(t){return t.replace(/[（(][^）)]{0,60}[）)]/g,'').replace(/\s+/g,' ').trim()}
-
-function startTTS(){
-  if(!thaiText){showToast('請先完成翻譯');return}
-  if(playing){stopTTS();return}
-  const clean=stripBrackets(thaiText);
-  if(!clean){showToast('沒有泰文可播放');return}
-  playing=true;
-  playBtn.classList.add('on');pIco.textContent='⏹';
-  pLabel.textContent='播放中 · กำลังเล่น';
-  pSub.textContent=`語速：${spkRate<=0.6?'慢速':spkRate>=1.1?'快速':'正常'} · 點擊停止`;
-  speechSynthesis.cancel();
-  const u=new SpeechSynthesisUtterance(clean);
-  u.lang='th-TH';u.rate=spkRate;u.pitch=1.05;u.volume=1;
-  const v=getThaiVoice();if(v)u.voice=v;
-  u.onend=()=>{stopTTS();if(looping)loopTimer=setTimeout(startTTS,1200)};
-  u.onerror=()=>stopTTS();
-  speechSynthesis.speak(u);
-}
+function startTTS(){if(!thaiText){showToast('請先完成翻譯');return}if(playing){stopTTS();return}const clean=stripBrackets(thaiText);if(!clean)return;playing=true;playBtn.classList.add('on');pIco.textContent='⏹';pLabel.textContent='播放中 · กำลังเล่น';pSub.textContent='點擊停止';speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(clean);u.lang='th-TH';u.rate=spkRate;u.pitch=1.05;u.volume=1;const v=getThaiVoice();if(v)u.voice=v;u.onend=()=>{stopTTS();if(looping)loopTimer=setTimeout(startTTS,1200)};u.onerror=()=>stopTTS();speechSynthesis.speak(u)}
 function stopTTS(){playing=false;speechSynthesis.cancel();clearTimeout(loopTimer);playBtn.classList.remove('on');pIco.textContent='🔊';pLabel.textContent='聆聽泰文發音';pSub.textContent='點擊播放 · กดเพื่อฟัง'}
-
 playBtn.addEventListener('click',startTTS);
-repBtn.addEventListener('click',()=>{looping=!looping;repBtn.classList.toggle('on',looping);showToast(looping?'🔁 循環播放已開啟':'循環播放已關閉');if(!looping)clearTimeout(loopTimer)});
+repBtn.addEventListener('click',()=>{looping=!looping;repBtn.classList.toggle('on',looping);showToast(looping?'🔁 循環開啟':'循環關閉');if(!looping)clearTimeout(loopTimer)});
 document.querySelectorAll('.sb').forEach(b=>{b.addEventListener('click',()=>{document.querySelectorAll('.sb').forEach(x=>x.classList.remove('on'));b.classList.add('on');spkRate=parseFloat(b.dataset.r);showToast('語速：'+b.textContent);if(playing){stopTTS();setTimeout(startTTS,80)}})});
 
-// ══ LABELS ══
-function setLabels(){
-  const zh=dir==='zh-th';
-  G('srcLbl').textContent=zh?'中文':'ภาษาไทย';G('srcLbl').className='lbadge '+(zh?'zh':'th');
-  G('tgtLbl').textContent=zh?'ภาษาไทย':'中文';G('tgtLbl').className='lbadge '+(zh?'th':'zh');
-  G('inLang').textContent=zh?'輸入中文':'ป้อนภาษาไทย';
-  G('outLang').textContent=zh?'ผลการแปลภาษาไทย':'翻譯結果（中文）';
-  inp.placeholder=zh?'請輸入中文… Ctrl+Enter 快速翻譯':'พิมพ์ภาษาไทย… Ctrl+Enter แปล';
-  renderPhrases();
-}
-
-// ══ DETECT ══
-function detectLang(t){const th=(t.match(/[\u0E00-\u0E7F]/g)||[]).length,zh=(t.match(/[\u4E00-\u9FFF\u3400-\u4DBF]/g)||[]).length;if(th>0&&th>zh)return'th-zh';if(zh>0&&zh>=th)return'zh-th';return dir}
-function updateDetect(t){if(!t.trim()){G('detLbl').textContent='等待輸入…';return}const d=detectLang(t);G('detLbl').textContent=d==='zh-th'?'偵測到：中文 → 泰文':'ตรวจพบ：ภาษาไทย → 中文';if(d!==dir){dir=d;setLabels()}}
-
-// ══ EVENTS ══
-inp.addEventListener('input',()=>{inCC.textContent=inp.value.length+' 字';clearTimeout(detTimer);detTimer=setTimeout(()=>updateDetect(inp.value),350)});
+function setLabels(){const zh=dir==='zh-th';G('srcLbl').textContent=zh?'中文':'ภาษาไทย';G('srcLbl').className='lbadge '+(zh?'zh':'th');G('tgtLbl').textContent=zh?'ภาษาไทย':'中文';G('tgtLbl').className='lbadge '+(zh?'th':'zh');G('inLang').textContent=zh?'輸入中文':'ป้อนภาษาไทย';G('outLang').textContent=zh?'ผลการแปล':'翻譯結果（中文）';inp.placeholder=zh?'請輸入中文…':'พิมพ์ภาษาไทย…';renderPhrases()}
+function detectLang(t){const th=(t.match(/[\u0E00-\u0E7F]/g)||[]).length,zh=(t.match(/[\u4E00-\u9FFF]/g)||[]).length;if(th>0&&th>zh)return'th-zh';if(zh>0&&zh>=th)return'zh-th';return dir}
+function updateDetect(t){if(!t.trim()){G('detLbl').textContent='等待輸入…';return}const d=detectLang(t);G('detLbl').textContent=d==='zh-th'?'偵測到：中文→泰文':'ตรวจพบ：ไทย→中文';if(d!==dir){dir=d;setLabels()}}
+inp.addEventListener('input',()=>{inCC.textContent=inp.value.length+'字';clearTimeout(detTimer);detTimer=setTimeout(()=>updateDetect(inp.value),350)});
 inp.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){e.preventDefault();doTranslate()}});
-G('swapBtn').addEventListener('click',()=>{if(busy)return;stopTTS();const prev=out.innerText.trim();dir=dir==='zh-th'?'th-zh':'zh-th';setLabels();const ok=prev&&!prev.includes('翻譯結果將顯示')&&!prev.includes('ผลจะแสดง');if(ok){inp.value=prev;inCC.textContent=prev.length+' 字'}resetOut();updateDetect(inp.value)});
-G('pasteBtn').addEventListener('click',async()=>{try{const t=await navigator.clipboard.readText();if(t){inp.value=t;inCC.textContent=t.length+' 字';updateDetect(t)}}catch{showToast('請手動長按貼上')}});
-G('clrInBtn').addEventListener('click',()=>{inp.value='';inCC.textContent='0 字';G('detLbl').textContent='等待輸入…';inp.focus()});
-G('clrBtn').addEventListener('click',()=>{if(busy)return;stopTTS();inp.value='';inCC.textContent='0 字';G('detLbl').textContent='等待輸入…';resetOut();inp.focus()});
-function doCopy(){const t=out.innerText.trim();if(!t||t.includes('翻譯結果將顯示'))return;navigator.clipboard.writeText(t).then(()=>{const b=G('cpyBtn');b.classList.add('ok');b.querySelector('.lb').textContent='✓';setTimeout(()=>{b.classList.remove('ok');b.querySelector('.lb').textContent='複製'},2200);showToast('✓ 已複製')}).catch(()=>showToast('請手動長按複製'))}
+G('swapBtn').addEventListener('click',()=>{if(busy)return;stopTTS();const prev=out.innerText.trim();dir=dir==='zh-th'?'th-zh':'zh-th';setLabels();if(prev&&!prev.includes('翻譯結果將顯示')){inp.value=prev;inCC.textContent=prev.length+'字'}resetOut();updateDetect(inp.value)});
+G('pasteBtn').addEventListener('click',async()=>{try{const t=await navigator.clipboard.readText();if(t){inp.value=t;inCC.textContent=t.length+'字';updateDetect(t)}}catch{showToast('請手動長按貼上')}});
+G('clrInBtn').addEventListener('click',()=>{inp.value='';inCC.textContent='0字';G('detLbl').textContent='等待輸入…';inp.focus()});
+G('clrBtn').addEventListener('click',()=>{if(busy)return;stopTTS();inp.value='';inCC.textContent='0字';G('detLbl').textContent='等待輸入…';resetOut();inp.focus()});
+function doCopy(){const t=out.innerText.trim();if(!t||t.includes('翻譯結果將顯示'))return;navigator.clipboard.writeText(t).then(()=>{const b=G('cpyBtn');b.classList.add('ok');b.querySelector('.lb').textContent='✓';setTimeout(()=>{b.classList.remove('ok');b.querySelector('.lb').textContent='複製'},2000);showToast('✓ 已複製')}).catch(()=>showToast('請手動長按複製'))}
 G('cpyBtn').addEventListener('click',doCopy);G('cpyOutBtn').addEventListener('click',doCopy);
-G('shrBtn').addEventListener('click',async()=>{const t=out.innerText.trim();if(!t||t.includes('翻譯結果將顯示'))return;const txt=`【翻譯大師PRO】\n原文：${inp.value.trim()}\n翻譯：${t}${pronText?'\n發音：'+pronText:''}`;if(navigator.share)try{await navigator.share({text:txt})}catch{}else{await navigator.clipboard.writeText(txt).catch(()=>{});showToast('✓ 已複製可分享')}});
-transBtn.addEventListener('click',doTranslate);
+G('shrBtn').addEventListener('click',async()=>{const t=out.innerText.trim();if(!t||t.includes('翻譯結果將顯示'))return;const txt='【翻譯大師PRO】\n原文：'+inp.value.trim()+'\n翻譯：'+t+(pronText?'\n發音：'+pronText:'');if(navigator.share)try{await navigator.share({text:txt})}catch{}else{await navigator.clipboard.writeText(txt).catch(()=>{});showToast('✓ 已複製')}});
+transBtn.addEventListener('click',()=>doTranslate());
 G('clrHist').addEventListener('click',async()=>{await dbClr();renderHist([]);showToast('記錄已清除')});
 
-// ══ TRANSLATE ══
-async function doTranslate(srcOverride){
-  const src=(srcOverride||inp.value).trim();
-  if(!src||busy){if(!src){inp.focus();showToast('請輸入文字')}return}
+async function doTranslate(src){
+  src=(src||inp.value).trim();
+  if(!src||busy){if(!src)inp.focus();return}
   busy=true;stopTTS();apiNote.classList.remove('show');
-  transBtn.disabled=true;transBtn.innerHTML='<span><span class="spin"></span>翻譯中…</span>';
+  transBtn.disabled=true;transBtn.textContent='⏳ 翻譯中…';
   out.innerHTML='<span class="ph-out">翻譯中，請稍候…</span>';
   pronun.style.display='none';speakPanel.classList.remove('show');
   outCC.textContent='';thaiText='';pronText='';
   const isZhTh=dir==='zh-th';
   try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{'content-type':'application/json','anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
-      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:512,system:isZhTh?SYS_ZH:SYS_TH,messages:[{role:'user',content:src}]})
-    });
-    if(!res.ok){const e=await res.json().catch(()=>({}));const msg=e?.error?.message||'';if(res.status===429||res.status===529||msg.includes('exceeded')){apiNote.classList.add('show');throw new Error('API 用量達上限，請稍後再試')}throw new Error(msg||`HTTP ${res.status}`)}
+    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'content-type':'application/json','anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:512,system:isZhTh?SYS_ZH:SYS_TH,messages:[{role:'user',content:src}]})});
+    if(!res.ok){const e=await res.json().catch(()=>({}));const msg=e?.error?.message||'';if(res.status===429||res.status===529||msg.includes('exceeded')){apiNote.classList.add('show');throw new Error('API用量達上限，請稍後再試')}throw new Error(msg||'HTTP '+res.status)}
     const data=await res.json();
     const raw=(data.content||[]).map(b=>b.text||'').join('').trim();
-    if(!raw)throw new Error('翻譯結果為空，請再試一次');
-    await renderResult(raw,isZhTh,src);
-  }catch(e){out.innerHTML=`<span class="err-msg">⚠ ${e.message}</span>`}
-  finally{busy=false;transBtn.disabled=false;transBtn.innerHTML='<span>✦ 立即翻譯</span>'}
+    if(!raw)throw new Error('回應為空');
+    const lines=raw.split('\n').map(l=>l.trim()).filter(Boolean);
+    let main='',pron='';
+    for(const l of lines){if(l.startsWith('📢'))pron=l.replace('📢','').trim();else if(!main)main=l}
+    if(!main)main=raw;
+    out.textContent=main;outCC.textContent=main.length+'字';
+    if(pron){pronun.textContent='📢 '+pron;pronun.style.display='block';pronText=pron}
+    if(isZhTh){thaiText=main;speakPanel.classList.add('show')}
+    if(db){await dbAdd({src,tgt:main,pron,dir:isZhTh?'中→泰':'泰→中',ts:Date.now()});renderHist(await dbAll())}
+    showToast('✓ 翻譯完成');
+  }catch(e){out.innerHTML='<span class="err-msg">⚠ '+e.message+'</span>'}
+  finally{busy=false;transBtn.disabled=false;transBtn.textContent='✦ 立即翻譯'}
 }
 
-// ══ RENDER ══
-async function renderResult(raw,isZhTh,src){
-  const lines=raw.split('\n').map(l=>l.trim()).filter(Boolean);
-  let main='',pron='';
-  for(const l of lines){if(l.startsWith('📢'))pron=l.replace('📢','').trim();else if(!main)main=l}
-  if(!main)main=raw;
-  out.textContent=main;outCC.textContent=main.length+' 字';
-  if(pron){pronun.textContent='📢 '+pron;pronun.style.display='block';pronText=pron}
-  if(isZhTh){thaiText=main;speakPanel.classList.add('show')}
-  else{thaiText='';speakPanel.classList.remove('show')}
-  if(db){await dbAdd({src,tgt:main,pron,dir:isZhTh?'中→泰':'泰→中',ts:Date.now()});renderHist(await dbAll())}
-  showToast('✓ 翻譯完成');
-}
-
-// ══ PHRASES ══
-function renderPhrases(){
-  const bar=G('suggBar'),list=PHRASES[dir]||[];
-  bar.innerHTML=list.map(s=>`<button class="sugg">${s}</button>`).join('');
-  bar.querySelectorAll('.sugg').forEach(b=>{b.addEventListener('click',()=>{if(busy)return;inp.value=b.textContent;inCC.textContent=inp.value.length+' 字';updateDetect(inp.value);doTranslate(b.textContent)})});
-}
-
-// ══ HISTORY ══
-function fmtDate(ts){const d=new Date(ts),now=new Date(),df=now-d;if(df<60e3)return'剛剛';if(df<3600e3)return Math.floor(df/60e3)+'分鐘前';if(df<86400e3)return Math.floor(df/3600e3)+'小時前';if(df<604800e3)return Math.floor(df/86400e3)+'天前';return`${d.getMonth()+1}/${d.getDate()} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`}
-
-function renderHist(items){
-  const sec=G('histSec'),list=G('histList');
-  if(!items?.length){sec.style.display='none';return}
-  sec.style.display='block';G('histMeta').textContent=`共 ${items.length} 筆 · 永久保存`;
-  list.innerHTML=items.map(h=>`<div class="hi" data-id="${h.id}"><div class="hi-top"><span class="hd2">✦ ${esc(h.dir)}</span><div class="hi-right"><span class="h-date">${fmtDate(h.ts)}</span><button class="hi-del" data-id="${h.id}">✕</button></div></div><div class="hi-src">${esc(h.src)}</div><div class="hi-tgt">${esc(h.tgt)}</div></div>`).join('');
-  list.querySelectorAll('.hi').forEach(el=>{el.addEventListener('click',e=>{if(e.target.classList.contains('hi-del'))return;const h=items.find(x=>x.id===+el.dataset.id);if(!h)return;stopTTS();inp.value=h.src;inCC.textContent=h.src.length+' 字';out.textContent=h.tgt;outCC.textContent=h.tgt.length+' 字';if(h.pron){pronun.textContent='📢 '+h.pron;pronun.style.display='block';pronText=h.pron}else{pronun.style.display='none';pronText=''}if(h.dir==='中→泰'){thaiText=h.tgt;speakPanel.classList.add('show')}else{thaiText='';speakPanel.classList.remove('show')}updateDetect(h.src);window.scrollTo({top:0,behavior:'smooth'})})});
-  list.querySelectorAll('.hi-del').forEach(b=>{b.addEventListener('click',async e=>{e.stopPropagation();await dbDel(+b.dataset.id);renderHist(await dbAll());showToast('已刪除此筆')})});
-}
-
-// ══ HELPERS ══
+function renderPhrases(){const bar=G('suggBar'),list=PHRASES[dir]||[];bar.innerHTML=list.map(s=>'<button class="sugg">'+s+'</button>').join('');bar.querySelectorAll('.sugg').forEach(b=>{b.addEventListener('click',()=>{if(busy)return;inp.value=b.textContent;inCC.textContent=inp.value.length+'字';updateDetect(inp.value);doTranslate(b.textContent)})})}
+function fmtDate(ts){const d=new Date(ts),now=new Date(),df=now-d;if(df<60e3)return'剛剛';if(df<3600e3)return Math.floor(df/60e3)+'分鐘前';if(df<86400e3)return Math.floor(df/3600e3)+'小時前';if(df<604800e3)return Math.floor(df/86400e3)+'天前';return(d.getMonth()+1)+'/'+d.getDate()}
+function renderHist(items){const sec=G('histSec'),list=G('histList');if(!items?.length){sec.style.display='none';return}sec.style.display='block';G('histMeta').textContent='共'+items.length+'筆 · 永久保存';list.innerHTML=items.map(h=>'<div class="hi" data-id="'+h.id+'"><div class="hi-top"><span class="hd2">✦ '+esc(h.dir)+'</span><div class="hi-right"><span class="h-date">'+fmtDate(h.ts)+'</span><button class="hi-del" data-id="'+h.id+'">✕</button></div></div><div class="hi-src">'+esc(h.src)+'</div><div class="hi-tgt">'+esc(h.tgt)+'</div></div>').join('');list.querySelectorAll('.hi').forEach(el=>{el.addEventListener('click',e=>{if(e.target.classList.contains('hi-del'))return;const h=items.find(x=>x.id===+el.dataset.id);if(!h)return;stopTTS();inp.value=h.src;inCC.textContent=h.src.length+'字';out.textContent=h.tgt;outCC.textContent=h.tgt.length+'字';if(h.pron){pronun.textContent='📢 '+h.pron;pronun.style.display='block';pronText=h.pron}else{pronun.style.display='none';pronText=''}if(h.dir==='中→泰'){thaiText=h.tgt;speakPanel.classList.add('show')}else{thaiText='';speakPanel.classList.remove('show')}updateDetect(h.src);window.scrollTo({top:0,behavior:'smooth'})})});list.querySelectorAll('.hi-del').forEach(b=>{b.addEventListener('click',async e=>{e.stopPropagation();await dbDel(+b.dataset.id);renderHist(await dbAll());showToast('已刪除')})})}
 function resetOut(){out.innerHTML='<span class="ph-out">翻譯結果將顯示於此 · ผลจะแสดงที่นี่</span>';pronun.style.display='none';speakPanel.classList.remove('show');outCC.textContent='';thaiText='';pronText=''}
-let toastT=null;
-function showToast(msg){const t=G('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),2500)}
+let toastT=null;function showToast(msg){const t=G('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),2500)}
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
-
-// ══ INIT ══
-async function init(){
-  try{await openDB();renderHist(await dbAll())}catch(e){console.warn('IndexedDB unavailable',e)}
-  setLabels();
-}
+async function init(){try{await openDB();renderHist(await dbAll())}catch(e){}setLabels()}
 init();
 </script>
 </body>
