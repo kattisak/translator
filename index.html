@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>翻譯大師 PRO · 中泰翻譯</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔤</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+Thai:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --g:#C9A84C;--glo:rgba(201,168,76,0.13);--gs:rgba(201,168,76,0.07);
+  --deep:#090601;--deep2:#130F05;--ink:#1A1005;--soft:#3C2E10;
+  --cream:#F5EDD8;--panel:#FAF4E4;--panel2:#F2EAD0;
+  --red:#A82820;--thai:#122548;--thai2:#1A3468;
+  --bd:#C5A460;--bds:rgba(197,164,96,0.28);
+  --sh:rgba(9,6,1,0.28);--shs:rgba(9,6,1,0.06);
+  --ok:#1A6035;--r:10px;
+  --ease:.18s cubic-bezier(.4,0,.2,1);
+}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Noto Serif TC',serif;
+  background:var(--cream);
+  min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;
+  padding-bottom:100px;overflow-x:hidden;
+}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 90% 55% at -5% -5%,rgba(201,168,76,.10) 0%,transparent 60%),
+    radial-gradient(ellipse 70% 55% at 105% 105%,rgba(18,37,72,.09) 0%,transparent 60%);
+}
+
+/* ═══ HEADER ═══ */
+header{
+  width:100%;
+  background:linear-gradient(175deg,#050302 0%,var(--deep) 40%,var(--deep2) 100%);
+  padding:22px 58px 17px;text-align:center;
+  border-bottom:2px solid var(--g);
+  position:relative;z-index:20;
+  box-shadow:0 8px 48px rgba(0,0,0,.55);overflow:hidden;
+}
+header::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(90deg,rgba(201,168,76,.022) 0,rgba(201,168,76,.022) 1px,transparent 1px,transparent 48px);
+}
+.hd{position:absolute;top:50%;transform:translateY(-50%);color:var(--g);font-size:.78rem;opacity:.32;letter-spacing:6px}
+.hd.l{left:10px}.hd.r{right:10px}
